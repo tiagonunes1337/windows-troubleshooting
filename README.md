@@ -1,155 +1,148 @@
 # Windows Troubleshooting
 
-Coleção de scripts para automação administrativa em ambientes Windows corporativos. O repositório reúne rotinas de Active Directory, preparação de estações, criação de mídia ISO, SharePoint Online e conferência de ativos e documentos.
+Repositório pessoal de Tiago de Aquino Nunes, criado para registrar, organizar e compartilhar tarefas de suporte, automação e modernização de infraestrutura Windows. Este projeto reflete o que eu faço no dia a dia como profissional da área de infraestrutura e suporte, com foco em resolver problemas reais, automatizar processos repetitivos e documentar boas práticas.
+
+A ideia aqui é simples: mostrar como transformar atividades manuais, demoradas e pouco escaláveis em processos mais eficientes, seguros e fáceis de manter. Esse repositório também funciona como parte do meu portfólio profissional, demonstrando meu trabalho, minha evolução técnica e minhas habilidades práticas em ambientes Windows.
+
+## Sobre mim
+
+Meu nome é Tiago de Aquino Nunes, e sou profissional da área de infraestrutura e suporte. Trabalho com soluções voltadas para ambientes Windows, automação, troubleshooting, organização de processos e suporte técnico operacional. 
+
+Ao longo da rotina, percebi que muitos procedimentos do dia a dia podem ser simplificados com scripts, documentação clara e automação. Este repositório nasceu justamente para registrar essa jornada e servir como base para aprendizado, evolução profissional e apresentação de trabalho em oportunidades de emprego.
 
 ## Visão geral
 
-Este não é um sistema web tradicional. Não há frontend, backend HTTP, banco de dados, testes automatizados ou pipeline CI/CD. Cada pasta contém uma automação independente, normalmente formada por um script principal e sua documentação.
+A evolução da infraestrutura não acontece apenas com ferramentas novas. Ela acontece quando o profissional deixa de depender apenas de procedimentos manuais e passa a usar automação, documentação clara, padronização e boas práticas de operação.
+
+Este repositório reúne práticas e scripts focados em:
+
+- criação e manutenção de usuários no Windows;
+- automação de tarefas operacionais usando PowerShell e Python;
+- manipulação de arquivos e planilhas para apoio de processos de suporte;
+- preparação de ambiente antes de formatação ou reinstalação;
+- geração e customização de imagens ISO;
+- validações e verificações de rotina para reduzir erros e retrabalho.
+
+## Por que esse repositório importa?
+
+Profissionais de infraestrutura que desejam se modernizar precisam ir além do suporte reativo. O mercado valoriza quem:
+
+- automatiza processos repetitivos;
+- reduz tempo de execução de tarefas administrativas;
+- melhora a documentação e rastreabilidade;
+- entende a importância de padronização e governança;
+- consegue mostrar resultados com ferramentas práticas e eficientes.
+
+Este projeto representa exatamente isso: um registro de soluções reais, pensadas para ajudar quem trabalha com Windows no dia a dia e quer evoluir para um perfil mais técnico, estratégico e valorizado.
+
+## Objetivo do projeto
+
+O objetivo deste repositório é servir como:
+
+- biblioteca prática de scripts e procedimentos usados no dia a dia de infraestrutura;
+- registro pessoal de atividades e soluções aplicadas em suporte Windows;
+- base de aprendizado para quem deseja evoluir na área e se modernizar tecnicamente;
+- material de portfólio profissional para demonstrar capacidade técnica e organização;
+- exemplo real de como documentar trabalho de TI com clareza, consistência e valor para o mercado.
+
+Além disso, este projeto ajuda a mostrar que trabalho com infraestrutura de forma prática, com visão de automação e melhoria contínua, e não apenas com execução manual de tarefas repetitivas.
 
 ## Estrutura do repositório
 
-```text
-.
-├── adicionar_usuarios/
-│   ├── adicionarusuario.ps1  # Cria OUs e usuário no Active Directory
-│   └── README.md             # Documentação do provisionamento AD
-├── automacao-excel/
-│   ├── script.ps1            # Cria pastas no SharePoint a partir de CSV
-│   ├── modelo_exemplo.csv    # Modelo de entrada, atualmente vazio
-│   └── README.md             # Documentação da automação SharePoint
-├── criar-iso/
-│   └── criariso.ps1          # Gera uma imagem ISO usando IMAPI2
-├── pre-formatacao/
-│   ├── Setup.ps1             # Configura estação Windows e ingresso no domínio
-│   └── README.md             # Documentação da preparação OOBE
-├── verificacao_comodato/
-│   ├── verificar_comodatos.py # Confere ativos em PDFs
-│   └── verificar_docx.py      # Confere ativos em documentos DOCX
-└── README.md
-```
+### adicionar_usuarios
+Diretório dedicado à criação e configuração de usuários no Windows, com foco em padronização e organização de processos de acesso e suporte.
 
-## Componentes
+### automacao-excel
+Área para automação de tarefas relacionadas a Excel e CSV. Esse tipo de automação é muito útil em ambientes de infraestrutura para geração de relatórios, tratamento de dados e redução de trabalho manual.
 
-### Active Directory
+### criar-iso
+Scripts e procedimentos para criação e customização de imagens ISO, úteis para padronização de ambiente, instalação e implantação de sistemas.
 
-O [adicionarusuario.ps1](adicionar_usuarios/adicionarusuario.ps1) detecta o domínio atual, cria a OU `HRBR` com OUs departamentais e cria o usuário `tiago.oliveira` na OU de TI. A senha é solicitada durante a execução com `SecureString` e a troca no primeiro logon é obrigatória.
+### pre-formatacao
+Contém orientações e scripts utilizados antes de reinstalações ou formatações, com foco em organização, backup e preparação do ambiente.
 
-Requer o módulo PowerShell `ActiveDirectory` e permissões para criar OUs e usuários.
+### verificacao_comodato
+Área voltada para validações automatizadas, checagens de documentos e processos que ajudam na manutenção e consistência do ambiente.
 
-### Preparação de estações
+## Competências demonstradas
 
-O [Setup.ps1](pre-formatacao/Setup.ps1) automatiza a preparação de uma estação Windows. Ele:
+Este repositório mostra uma combinação de habilidades relevantes para infraestrutura moderna, como:
 
-- solicita o hostname;
-- verifica conectividade com o domínio;
-- cria ou atualiza uma conta local de suporte;
-- configura administradores locais;
-- agenda permissões de usuários do domínio após o reboot;
-- ingressa a máquina no Active Directory;
-- renomeia o computador;
-- altera o fluxo do OOBE;
-- reinicia a máquina.
+- PowerShell para automação de tarefas Windows;
+- Python para validações, automação e processamento de arquivos;
+- Excel e CSV como apoio à rotina e relatórios;
+- troubleshooting de ambiente Windows;
+- organização de documentação técnica;
+- padronização de processos de suporte;
+- foco em eficiência operacional e redução de retrabalho.
 
-O script exige PowerShell elevado e credenciais autorizadas para ingressar computadores no domínio. As operações de Registro, grupos administrativos e OOBE devem ser testadas em uma máquina virtual antes do uso em produção.
+## Como isso ajuda quem trabalha em infraestrutura
 
-### Criação de ISO
+Na prática, um profissional de infraestrutura pode usar esse tipo de repositório para:
 
-O [criariso.ps1](criar-iso/criariso.ps1) usa o componente COM `IMAPI2FS.MsftFileSystemImage` para gerar uma ISO a partir de `C:\temp\pre-formatacao` e salvá-la em `C:\temp\script.iso`.
+- registrar consultas e soluções para problemas recorrentes;
+- criar scripts para tarefas repetitivas;
+- reduzir erros manuais em processos administrativos;
+- padronizar configurações de usuários e ambiente;
+- melhorar a qualidade da documentação e do suporte;
+- demonstrar evolução técnica para clientes, gestores ou recrutadores.
 
-Os caminhos são absolutos e precisam existir na máquina de execução. A pasta não possui README próprio.
+Em um cenário de transformação digital, profissionais que automatizam tarefas e deixam processos mais confiáveis se destacam muito mais do que aqueles que apenas executam procedimentos manualmente.
 
-### SharePoint Online
+## Portfólio profissional
 
-O [script.ps1](automacao-excel/script.ps1) usa `PnP.PowerShell` para ler um CSV e criar pastas em uma biblioteca do SharePoint Online. Ele possui:
+Este repositório também pode ser usado como parte do meu portfólio profissional para buscar oportunidades em:
 
-- modo de simulação com `$DryRun`;
-- proteção contra duplicidades no CSV;
-- verificação de pastas já existentes;
-- sanitização de caracteres inválidos;
-- logs com contadores de sucesso, duplicidade e erro;
-- tratamento individual de falhas por registro.
+- suporte técnico;
+- infraestrutura de TI;
+- administração de sistemas Windows;
+- help desk;
+- automação de processos;
+- analista de suporte;
+- atuação em ambientes corporativos e de produção.
 
-Requer PowerShell e o módulo `PnP.PowerShell`. Apesar do nome da pasta, a implementação atual lê CSV diretamente. O formato de colunas descrito no README da pasta deve ser alinhado às colunas realmente procuradas pelo script, incluindo `CPF`.
+Ao apresentar um projeto como este, consigo demonstrar que:
 
-### Conferência de comodatos
+- entendo a rotina de infraestrutura e suporte;
+- aplico automação em problemas reais do dia a dia;
+- documento processos de forma clara e útil;
+- busco modernizar tarefas repetitivas e reduzir retrabalho;
+- tenho visão prática para resolver desafios do ambiente corporativo.
 
-Os scripts da pasta [verificacao_comodato](verificacao_comodato) usam Python para cruzar dados de equipamentos com documentos.
+Para mim, este repositório representa muito mais do que scripts: representa a forma como trabalho, como organizo tarefas e como busco evoluir dentro da área.
 
-O [verificar_comodatos.py](verificacao_comodato/verificar_comodatos.py):
+## Exemplos de uso no dia a dia
 
-1. lê `VerificarComodatos.csv`;
-2. percorre PDFs recursivamente;
-3. extrai texto com `pypdf`;
-4. localiza patrimônio e número de série;
-5. detecta padrões de processadores Intel;
-6. compara os dados e gera `Resultado_Comodatos_Verificados.csv`.
+Algumas atividades que podem ser representadas por este projeto incluem:
 
-O [verificar_docx.py](verificacao_comodato/verificar_docx.py) filtra itens não localizados em PDF, percorre DOCX com `python-docx` e gera `Resultado_Comodatos_DOCX.csv`. Os scripts não se chamam diretamente; o encadeamento depende da preparação dos arquivos e colunas de entrada.
+- criação de usuários em massa;
+- ajustes de acessos e permissões;
+- preparação de computadores para novos usuários;
+- organização de relatórios e dados do setor de suporte;
+- verificação de arquivos e documentação antes da finalização de tarefas;
+- geração de ambientes personalizados para implantação;
+- padronização de procedimentos de troubleshooting.
 
-## Fluxo arquitetural
+## Melhorias futuras
 
-```mermaid
-flowchart TD
-	A[adicionar_usuarios] --> B[Active Directory]
-	C[pre-formatacao] --> D[Estacao Windows]
-	E[criar-iso] --> F[Imagem ISO]
-	G[automacao-excel] --> H[SharePoint Online]
-	I[CSV de comodatos] --> J[verificacao_comodato]
-	K[PDF e DOCX] --> J
-	J --> L[Relatorios CSV]
-```
+Este repositório pode evoluir com:
 
-Não existe um ponto de entrada único nem chamadas diretas entre as pastas. A relação entre `criar-iso` e `pre-formatacao` é operacional: a ISO pode empacotar arquivos da preparação, mas o script usa caminho absoluto externo ao repositório.
+- logs mais estruturados;
+- testes automatizados de validação;
+- integração com GitHub Actions;
+- documentação de cada script com exemplos de uso;
+- criação de módulos mais reutilizáveis;
+- extensão para ambientes com AD, Intune, MDT ou gestão centralizada.
 
-## Tecnologias e dependências
+## Conclusão
 
-| Área | Tecnologias |
-| --- | --- |
-| Administração Windows | PowerShell, Registro, OOBE, grupos locais |
-| Identidade | Active Directory, OUs, usuários e domínio |
-| Cloud | SharePoint Online, PnP.PowerShell |
-| Documentos | Python, pandas, pypdf, python-docx |
-| Mídia | COM IMAPI2FS, C#, interoperabilidade COM |
-| Dados | CSV, texto extraído de PDF e DOCX |
+Este projeto representa uma forma prática e profissional de documentar a rotina de infraestrutura e mostrar evolução técnica. Ele não é apenas um conjunto de scripts; ele é um registro de conhecimento, organização e automação aplicada ao trabalho do dia a dia.
 
-As dependências Python não estão declaradas em `requirements.txt` ou `pyproject.toml`. Também não há manifesto de módulos PowerShell.
+Para quem trabalha em infraestrutura e suporte, essa abordagem é essencial para acompanhar a modernização do setor, melhorar produtividade e aumentar a competitividade no mercado. E para mim, também serve como um espelho do meu desenvolvimento profissional: o que aprendi, como aplico e como sigo evoluindo na área.
 
-## Relação com carreiras
+## Licença
 
-| Objetivo | Partes mais importantes | Conhecimentos envolvidos | Prioridade |
-| --- | --- | --- | --- |
-| Backend | `automacao-excel`, `verificacao_comodato` | Processamento, validação, integração e relatórios | Média |
-| Frontend | Não há implementação | Interface CLI ou futura interface web | Baixa |
-| Full Stack | SharePoint e processamento de comodatos | Dados, integração, APIs e apresentação | Baixa |
-| Infraestrutura | `pre-formatacao`, `criar-iso` | Windows, AD, Registro, OOBE e imagens | Alta |
-| DevOps | `automacao-excel`, `pre-formatacao` | Automação, idempotência, logs e execução controlada | Média |
-| Cloud | `automacao-excel` | SharePoint Online, PnP e permissões | Alta |
-| SRE | Logs e contadores do SharePoint | Observabilidade, métricas e tratamento de falhas | Baixa |
-| Cybersecurity | `pre-formatacao`, `adicionar_usuarios` | Privilégios, credenciais, AD, LAPS e GPO | Alta |
-| QA/Testes | Todos os scripts | Testes de PowerShell/Python e dados de entrada | Média |
-| Data/Database | `verificacao_comodato` | pandas, regex, documentos e CSV | Alta |
+Este projeto é mantido para fins de estudo, documentação e compartilhamento técnico. Sinta-se livre para usar, adaptar e evoluir os scripts conforme a necessidade do seu ambiente.
 
-## O que estudar primeiro
+Desenvolvido por Tiago de Aquino Nunes.
 
-- **Infraestrutura e SysAdmin:** comece por [pre-formatacao/Setup.ps1](pre-formatacao/Setup.ps1) e depois estude [adicionar_usuarios/adicionarusuario.ps1](adicionar_usuarios/adicionarusuario.ps1). Eles concentram domínio, máquinas, usuários, grupos e políticas operacionais.
-- **DevOps:** comece por [automacao-excel/script.ps1](automacao-excel/script.ps1), observando `DryRun`, logs, tratamento de exceções e controle de duplicidade.
-- **Cloud:** estude a integração com SharePoint e o módulo `PnP.PowerShell` no mesmo script.
-- **Cybersecurity:** analise as operações privilegiadas de `Setup.ps1`, especialmente conta local, administradores, `RunOnce`, credenciais e alterações do OOBE.
-- **QA/Testes:** use os scripts de comodatos para criar casos de teste com PDFs, DOCX e CSVs válidos, ausentes, duplicados e inconsistentes.
-- **Data:** comece por [verificacao_comodato/verificar_comodatos.py](verificacao_comodato/verificar_comodatos.py), seguindo o fluxo de ingestão, extração, comparação e exportação.
-- **Frontend:** não há uma base existente; seria necessário criar uma interface para executar as rotinas e visualizar logs e relatórios.
-
-## Limitações conhecidas
-
-- Não há testes automatizados ou validação em CI.
-- Não há dependências fixadas para Python ou PowerShell.
-- Não há banco de dados persistente.
-- Não há pipeline de execução único.
-- `criariso.ps1` utiliza caminhos absolutos.
-- Os scripts de comodatos dependem de arquivos de entrada externos.
-- O modelo CSV está vazio.
-- Não há `.gitignore` no repositório atual; arquivos reais de funcionários, documentos, logs e relatórios não devem ser publicados.
-
-## Segurança
-
-As senhas não devem ser armazenadas nos scripts. Os scripts atuais solicitam credenciais durante a execução, mas ainda realizam operações privilegiadas. Em ambiente real, recomenda-se utilizar Microsoft LAPS, GPO, gestão centralizada de privilégios, auditoria e armazenamento seguro de dados.
