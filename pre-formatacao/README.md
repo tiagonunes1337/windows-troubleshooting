@@ -15,12 +15,6 @@ Este repositório contém um script de automação em PowerShell (`Setup.ps1`) p
 - Conectividade ativa com a rede corporativa.
 - Credenciais válidas de um usuário com permissões delegadas para ingresso de computadores no domínio.
 
-## Instruções de Uso
-1. Abra o PowerShell como Administrador.
-2. Execute o script: `.\Setup.ps1`.
-3. Siga as instruções do console para informar o hostname desejado (ex: `CORP-WS-001`).
-4. Autentique-se com credenciais de domínio quando solicitado para concluir a junção do ativo.
-5. O sistema será reiniciado automaticamente para aplicar as alterações.
 
 ## Considerações de Segurança
 
