@@ -1,3 +1,13 @@
-# Configurações locais e dados específicos do ambiente
-config.local/
-config.local.*
+# Configurações locais com senhas, IPs ou tokens
+config.local
+*.local
+.env
+
+# Logs e outputs de scripts
+*.log
+output/
+temp/
+
+# Arquivos de IDE
+.vscode/
+.idea/
