@@ -1,6 +1,6 @@
 # Windows Troubleshooting
 
-Repositório pessoal de Tiago de Aquino Nunes, criado para registrar, organizar e compartilhar tarefas de suporte, automação e modernização de infraestrutura Windows. Este projeto reflete o que eu faço no dia a dia como profissional da área de infraestrutura e suporte, com foco em resolver problemas reais, automatizar processos repetitivos e documentar boas práticas.
+Repositório criado para registrar, organizar e compartilhar tarefas de suporte, automação e modernização de infraestrutura Windows. O projeto reúne exemplos de troubleshooting, automação de processos e documentação de boas práticas.
 
 A ideia aqui é simples: mostrar como transformar atividades manuais, demoradas e pouco escaláveis em processos mais eficientes, seguros e fáceis de manter. Esse repositório também funciona como parte do meu portfólio profissional, demonstrando meu trabalho, minha evolução técnica e minhas habilidades práticas em ambientes Windows.
 
@@ -58,11 +58,17 @@ Diretório dedicado à criação e configuração de usuários no Windows, com f
 ### criar-iso
 Scripts e procedimentos para criação e customização de imagens ISO, úteis para padronização de ambiente, instalação e implantação de sistemas.
 
+### limparTPM_Teams
+Scripts para correção de problemas de perfil do Teams, limpeza residual do aplicativo, validação do canal de confiança com o domínio e checagem do estado do TPM em máquinas Windows.
+
 ### pre-formatacao
 Contém orientações e scripts utilizados antes de reinstalações ou formatações, com foco em organização, backup e preparação do ambiente.
 
 ### verificacao_comodato
 Área voltada para validações automatizadas, checagens de documentos e processos que ajudam na manutenção e consistência do ambiente.
+
+### windows-suport-toolkit
+Scripts para verificar se os drivers estão funcionando perfeitamente, atráves de procura de logs e limpeza de caches antigos e temp.
 
 ## Competências demonstradas
 
@@ -145,4 +151,3 @@ Para quem trabalha em infraestrutura e suporte, essa abordagem é essencial para
 Este projeto é mantido para fins de estudo, documentação e compartilhamento técnico. Sinta-se livre para usar, adaptar e evoluir os scripts conforme a necessidade do seu ambiente.
 
 Desenvolvido por Tiago de Aquino Nunes.
-

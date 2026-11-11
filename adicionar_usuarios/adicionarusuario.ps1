@@ -1,8 +1,9 @@
 # 1. Definir o domínio base automaticamente
-$DomainDN = (Get-ADDomain).DistinguishedName # Retorna: DC=hrbr,DC=com
+$Domain = Get-ADDomain
+$DomainDN = $Domain.DistinguishedName
 
 # 2. Criar a estrutura base de OUs (com proteção contra exclusão acidental)
-$TopOU = "HRBR" # Nome da OU principal
+$TopOU = "ORG" # Nome de exemplo da OU principal
 New-ADOrganizationalUnit -Name $TopOU -Path $DomainDN -ProtectedFromAccidentalDeletion $true
 
 # Sub-OUs padrão de mercado
@@ -18,19 +19,18 @@ New-ADOrganizationalUnit -Name "TI" -Path "OU=Departamentos,OU=$TopOU,$DomainDN"
 $TargetOU = "OU=TI,OU=Departamentos,OU=$TopOU,$DomainDN"
 
 # 4. Criar o Usuário apontando direto para a OU com o parâmetro -Path
-$Password = Read-Host "Digite a senha inicial do usuário Tiago de Oliveira" -AsSecureString
+$Password = Read-Host "Digite a senha inicial do usuário de exemplo" -AsSecureString
 
-# --- USUÁRIO 1: Tiago Oliveira ---
-New-ADUser -Name "Tiago de Oliveira" `
-           -DisplayName "Tiago Oliveira" `
-           -GivenName "Tiago" `
-           -Surname "de Oliveira" `
-           -SamAccountName "tiago.oliveira" `
-           -UserPrincipalName "tiago.oliveira@hrbr.com" `
+# --- Usuário fictício de exemplo ---
+New-ADUser -Name "Usuario Exemplo" `
+           -DisplayName "Usuario Exemplo" `
+           -GivenName "Usuario" `
+           -Surname "Exemplo" `
+           -SamAccountName "usuario.exemplo" `
+           -UserPrincipalName "usuario.exemplo@$($Domain.DNSRoot)" `
            -Path $TargetOU `
            -AccountPassword $Password `
            -Enabled $true `
            -ChangePasswordAtLogon $true `
            -Department "TI" `
            -Title "Gestor de SysAdmin"
-

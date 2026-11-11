@@ -1,7 +1,8 @@
 # --- CONFIGURAÇÃO ---
 [Console]::OutputEncoding = [System.Text.Encoding]::UTF8
-$Dominio = "hrbr.com" 
-$UsuariosAD = @("tiago.oliveira") # Lista de usuários que serão adicionados ao grupo de administradores locais
+# Substitua pelos valores do ambiente antes de executar.
+$Dominio = "example.com"
+$UsuariosAD = @("usuario.exemplo") # Usuários adicionados ao grupo de administradores locais
 
 # ATENÇÃO: Em produção, utilize credenciais criptografadas.
 $CredencialJoin = Get-Credential -Message "Digite seu usuario e senha do AD para ingressar no dominio"

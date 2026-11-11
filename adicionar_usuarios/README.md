@@ -1,6 +1,6 @@
 # Adicionar usuário no Active Directory
 
-O script `adicionarusuario.ps1` cria uma estrutura inicial de Unidades Organizacionais (OUs) no domínio atual e adiciona o usuário **Tiago de Oliveira** diretamente na OU de TI.
+O script `adicionarusuario.ps1` cria uma estrutura inicial de Unidades Organizacionais (OUs) no domínio atual e adiciona um usuário de exemplo diretamente na OU de TI. Os nomes abaixo são fictícios.
 
 ## Pré-requisitos
 
@@ -17,10 +17,10 @@ Import-Module ActiveDirectory
 
 ## Estrutura criada
 
-O domínio base é obtido automaticamente com `Get-ADDomain`. Considerando o domínio `hrbr.com`, cuja DN é `DC=hrbr,DC=com`, o script cria:
+O domínio base é obtido automaticamente com `Get-ADDomain`. Usando `example.com` apenas como exemplo, a estrutura seria:
 
 ```text
-OU=HRBR,DC=hrbr,DC=com
+OU=ORG,DC=example,DC=com
 ├── OU=Departamentos
 │   └── OU=TI
 ├── OU=Computadores
@@ -36,15 +36,15 @@ Todas as OUs são criadas com `ProtectedFromAccidentalDeletion` habilitado.
 O usuário é criado em:
 
 ```text
-OU=TI,OU=Departamentos,OU=HRBR,DC=hrbr,DC=com
+OU=TI,OU=Departamentos,OU=ORG,DC=example,DC=com
 ```
 
 | Propriedade | Valor |
 | --- | --- |
-| Nome | Tiago de Oliveira |
-| Display name | Tiago Oliveira |
-| Nome de login | `tiago.oliveira` |
-| UPN | `tiago.oliveira@hrbr.com` |
+| Nome | Usuario Exemplo |
+| Display name | Usuario Exemplo |
+| Nome de login | `usuario.exemplo` |
+| UPN (exemplo) | `usuario.exemplo@example.com` |
 | Departamento | TI |
 | Cargo | Gestor de SysAdmin |
 | Estado | Habilitado |
